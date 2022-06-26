@@ -17,6 +17,9 @@
 :root {
     --input-width: 45px;
 }
+body {
+    min-width: 1000px;
+}
 header {
     display: flex;  
     background-color: #131921;
@@ -29,12 +32,16 @@ header {
     flex-shrink: 0;
 }
 .headerLocationButton {
+    margin-top: 5px;
     display: flex;
     align-items: center;
     gap: 2px;
     padding: 3px 3px 0 3px;
     margin-bottom: 3px;
 
+}
+.headeerLocationButton h2 {
+    margin-bottom: 4px;
 }
 .headerLocationButton > img {
     align-self: flex-end;
@@ -47,11 +54,11 @@ header {
     margin-bottom: 7px;
     padding: 6px 10px 0px 5px;
 }
-.headerLocationButton, .headerHomeButton {
+.headerLocationButton, .headerHomeButton, .headerButton{
     border: 1px solid #131921;
     border-radius: 2px;
 }
-.headerLocationButton:hover, .headerHomeButton:hover {
+.headerLocationButton:hover, .headerHomeButton:hover, .headerButton:hover {
     cursor: pointer;
     border: 1px solid white;
 }
@@ -69,7 +76,7 @@ header h1 {
 }
  h2 {
     font-family: 'AmazonBold', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
 }
 header h2 {
     font-size: .9rem;
@@ -83,9 +90,9 @@ header h2 {
 .caret {
     margin-bottom: 5px;
     margin-left: 3px;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    border-top: 6px solid grey;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 5px solid grey;
 }
 input[type='submit'] {
     position: absolute;
@@ -129,12 +136,31 @@ input[type='text'] {
 }
 .navRight h1 {
     font-family: 'AmazonRegular', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
 }
-.headerButton {
-    padding: 3px;
+.headerButton:not(.headerButton:nth-child(3))  {
+    display: flex;
+    align-items: center;
+    height: 47px;
+    padding: 5px 2px 0px 2px;
 }
 .headerButton:last-child > h2, .navRight div:nth-child(1) h2  {
     display: flex;
     align-items: flex-end;
+}
+.headerButton:last-child {
+    align-items: flex-end;
+    padding-bottom: 5px;
+    height: 47px;
+    position: relative;
+    padding-right: 20px;
+}
+.cartCount {
+    font-family: 'AmazonBold', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    position: absolute;
+    color: #f08804;
+    left: 20px;
+    bottom: 20px;
 }

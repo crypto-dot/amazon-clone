@@ -3,6 +3,8 @@ import './Header.css'
 import AmazonLogo from './images/AmazonLogo2.png';
 import locationImg from './images/LogoLocation.png';
 import cart from './images/cart.png';
+
+
 function leftNav () {
     return (
         <div className = 'navLeft'>
@@ -32,7 +34,8 @@ function rightNav () {
 <div className = 'headerButton'> <div> <div> <h1>Returns</h1> </div>
      <h2>&amp; Orders</h2> </div>
      </div>
-<div className = 'headerButton'> 
+<div className = 'headerButton cartButton'> 
+<span className= 'cartCount'>0</span>
     <img height = '30px' src= {cart} />
     <h2>Cart</h2>
     </div> 
@@ -42,7 +45,7 @@ function rightNav () {
 }
 
 
-function Header() {
+function Header(props) {
   return (
       <header>
           {leftNav()} {searchBar()} {rightNav()}
