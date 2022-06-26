@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'AmazonThin';
+    src: url('./fonts/Ember/AmazonEmber_Lt.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'AmazonRegular';
+    src: url('./fonts/Ember/AmazonEmber_Rg.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'AmazonBold';
+    src: url('./fonts/Ember/AmazonEmber_Bd.ttf') format('ttf');
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --input-width: 45px;
+}
+header {
+    display: flex;  
+    background-color: #131921;
+    height: 60px;
+    gap: 12px;
+}
+.navLeft {
+    padding-left: 12px;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+.headerLocationButton {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px 3px 0 3px;
+    margin-bottom: 3px;
+
+}
+.headerLocationButton > img {
+    align-self: flex-end;
+    margin-bottom: 13px;
+}
+.headerHomeButton {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    padding: 6px 10px 0px 5px;
+}
+.headerLocationButton, .headerHomeButton {
+    border: 1px solid #131921;
+    border-radius: 2px;
+}
+.headerLocationButton:hover, .headerHomeButton:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+.headerButton {
+    display: flex;
+}
+h1, h2 {
+    color:white;
+}
+
+header h1 {
+    font-family: 'AmazonThin', sans-serif;
+    font-size: .75rem;
+    font-weight: 300;
+}
+ h2 {
+    font-family: 'AmazonBold', sans-serif;
+    font-weight: 700;
+}
+header h2 {
+    font-size: .9rem;
+}
+.navMiddle {
+    align-items: center;
+    position:relative;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+.caret {
+    margin-bottom: 5px;
+    margin-left: 3px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 6px solid grey;
+}
+input[type='submit'] {
+    position: absolute;
+    right:0;
+    border:none;
+    outline: none;
+    height: 40px;
+    top: 0;
+    background-color: #febd68;
+    width: 45px;
+    border-radius: 5px;
+    background-image: url('./images/searchIcon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+input[type='submit']:hover {
+    cursor: pointer;
+    background-color: #f3a846;
+}
+form {
+    width: 100%;
+    position: relative;
+}
+input[type='text'] {
+    width: 100%;
+    border:none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    height: 40px;
+    border-radius: 5px;
+}
+.navRight, .navMiddle, .navLeft {
+    display: flex;
+    height: 60px;
+}
+.navRight {
+    align-items: center;
+    gap: 10px;
+}
+.navRight h1 {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 400;
+}
+.headerButton {
+    padding: 3px;
+}
+.headerButton:last-child > h2, .navRight div:nth-child(1) h2  {
+    display: flex;
+    align-items: flex-end;
+}
