@@ -21,7 +21,6 @@
       padding: 0;
   }
   .carousel_viewport {
-    position: absolute;
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -48,7 +47,7 @@
     .carousel_snapper {
         animation-name: tonext, snap;
         animation-timing-function: ease;
-        animation-duration: 4s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
     }
     .carousel_slide:last-child .carousel_snapper {
@@ -104,9 +103,13 @@
     }
     
 }
+/* @keyframes slide {
+    
+} */
 .homePage {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #eaeaed00;
 }
 .carousel_viewport li::after {
@@ -116,7 +119,6 @@
     display: block;
     width: 100%;
     height: 200px;
-    background: rgba(234, 234, 237, 1.0);
     background: -webkit-linear-gradient(bottom, rgba(234, 234, 237, 1.0), rgba(232, 232, 232, 0.0));
     background: -moz-linear-gradient(bottom, rgba(234, 234, 237, 1.0), rgba(232, 232, 232, 0.0));
     background: linear-gradient(to top, rgba(234, 234, 237, 1.0), rgba(232, 232, 232, 0.0));
@@ -133,18 +135,11 @@
     position: absolute;
     display: flex;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 5%;
     top: 0;
     padding: 20px;
     border-radius: 5px;
     height: 200px;
-}
-.slide-in {
-    animation: slide ease 0.5s animation-fill-mode;
-}
-@keyframes slide {
-
-    
 }
 .prev:active, .next:active {
     border: 1px solid white;
@@ -154,4 +149,75 @@
 }
 .next {
     right: 0;
+}
+.product {
+    background-color: white;
+    padding: 0.5rem;
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 1rem;
+    justify-content: space-between;
+    min-height: 350px;
+}
+.productImg {
+    max-height: 250px;
+    height: 15vw;
+    width: initial;
+    max-width: clamp(170px,15vw,500px);
+}
+.reviewCount {
+    font-family: 'AmazonThin', sans-serif;
+    font-weight: 100;
+    color: grey;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+.homeRowContainer {
+    position: absolute;
+    top: clamp(325px,40vw,300px);
+}
+#homeRow1, #homeRow2 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#homeRow1 {
+    margin-bottom: 1rem;
+}
+.addToCart {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: .9rem;
+    margin-top: .5rem;
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    background-color:#FF9900;
+}
+.addToCart:hover {
+    cursor: pointer;
+}
+.addToCart:hover, .addToCart:focus {
+    background-color: #e0921c;
+}
+.ratingAndCount {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.rating {
+    display: flex;
+}
+.title {
+    overflow: scroll;
+    width: 100%;
+    text-align: center;
 }
