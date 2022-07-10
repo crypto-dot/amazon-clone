@@ -18,10 +18,10 @@ import './Home.css'
 function imgCarousel () {
     return (
         <ol className = 'carousel_viewport'>
-            <li className="carousel_slide" id="carousel_slide1" tabIndex="0"><div className='carousel_snapper'> </div><img src = {PictureSlide1}/> <a href="#carousel_slide4" className="prev"><img src= {Prev} alt="" /></a> <a href="#carousel_slide2" className="next"><img src={Next} alt="" /></a> </li>
-            <li className="carousel_slide" id="carousel_slide2" tabIndex="0"><div className='carousel_snapper'> </div><img src = {PictureSlide2}/> <a href="#carousel_slide1" className="prev"><img src={Prev} alt="" /> </a><a href="#carousel_slide3" className="next"><img src={Next} alt="" /></a>  </li>
-            <li className="carousel_slide" id="carousel_slide3" tabIndex="0"><div className='carousel_snapper'> </div><img src = {PictureSlide3}/> <a href="#carousel_slide2" className="prev"><img src={Prev} alt="" /> </a> <a href="#carousel_slide4" className="next"><img src={Next} alt="" /></a> </li>
-            <li className="carousel_slide" id="carousel_slide4" tabIndex="0"><div className='carousel_snapper'> </div><img src = {PictureSlide4}/> <a href="#carousel_slide3" className="prev"><img src={Prev} alt="" /></a> <a href="#carousel_slide1" className="next"><img src={Next} alt="" /></a> </li>
+            <li className="carousel_slide" id="carousel_slide1" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Prime day deals" src = {PictureSlide1}/> <a href="#carousel_slide4" className="prev"><img src= {Prev} alt="" /></a> <a href="#carousel_slide2" className="next"><img src={Next} alt="" /></a> </li>
+            <li className="carousel_slide" id="carousel_slide2" tabIndex="0"><div className='carousel_snapper'> </div><img alt = "Fire stick ad"src = {PictureSlide2}/> <a href="#carousel_slide1" className="prev"><img src={Prev} alt="" /> </a><a href="#carousel_slide3" className="next"><img src={Next} alt="" /></a>  </li>
+            <li className="carousel_slide" id="carousel_slide3" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Amazon prime day ad" src = {PictureSlide3}/> <a href="#carousel_slide2" className="prev"><img src={Prev} alt="" /> </a> <a href="#carousel_slide4" className="next"><img src={Next} alt="" /></a> </li>
+            <li className="carousel_slide" id="carousel_slide4" tabIndex="0"><div className='carousel_snapper'> </div><img alt="The boys TV series ad" src = {PictureSlide4}/> <a href="#carousel_slide3" className="prev"><img src={Prev} alt="" /></a> <a href="#carousel_slide1" className="next"><img src={Next} alt="" /></a> </li>
         </ol>
     )
 }
@@ -33,6 +33,7 @@ function Home() {
         <div className='homeRowContainer'>
         <div id = 'homeRow1'>
         <Product
+                key = {123}
                 id = {0} 
                 title = 'M Series TV Mount'
                 image = {TVMount}
@@ -40,6 +41,7 @@ function Home() {
                 ratingCount = {5312}
                 price = {69.99}/>              
         <Product 
+            key = {212}
             id = {1}
             title = 'Google Nest Learning Thermostat'
             image = {Thermostat}
@@ -47,6 +49,7 @@ function Home() {
             ratingCount = {12110}
             price = {99.99}/>              
         <Product
+            key = {125}
             id = {2}  
             title = 'Ninja BL610 Professional'
             image = {Blender}
@@ -54,6 +57,7 @@ function Home() {
             ratingCount = {12302}
             price = {199.99}/> 
         <Product 
+            key= {109}
             id = {3}
             title = 'Apple Air Tag'
             image = {AppleAirTag}
@@ -63,6 +67,7 @@ function Home() {
         </div>
         <div id = 'homeRow2'> 
             <Product 
+                key = {993}
                 id = {4}
                 title = 'Instant Pot Duo 7-in-1 Electric Cooker'
                 image = {InstaPot}
@@ -70,6 +75,7 @@ function Home() {
                 ratingCount = {3012}
                 price = {49.99}/> 
             <Product
+                key = {221}
                 id = {5} 
                 title = 'HP Pavillon 5'
                 image = {HP}
@@ -77,6 +83,7 @@ function Home() {
                 ratingCount = {12030}
                 price = {599.99}/> 
             <Product
+                key = {101}
                 id = {6} 
                 title = 'BlastCase Black 3-Button 3D USB '
                 image = {ShittyMouse}
@@ -84,6 +91,7 @@ function Home() {
                 ratingCount = {9921}   
                 price = {5.99}/> 
             <Product
+                key = {312}
                 id = {7} 
                 title = 'M Series TV Mount'
                 image = {TVMount}

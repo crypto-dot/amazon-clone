@@ -2,9 +2,9 @@ import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider';
 function Subtotal() {
-    const [{basket}, dispatch] = useStateValue();
+    const [{basket}] = useStateValue();
     function totalBasketPrice() {
-        const [{basket}, dispatch] = useStateValue();
+        const [{basket}] = useStateValue();
         return basket.reduce((prevVal , objVal) => prevVal + objVal.price, 0);
     }
 

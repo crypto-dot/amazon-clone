@@ -1,0 +1,43 @@
+:root{
+    --img-maxWidth: clamp(170px,10vw,400px); 
+}
+.cartItem {
+    display: flex;
+    border-bottom: 2px solid rgba(224, 224, 224, 0.568)
+}
+.cartItem img {
+    width: initial;
+    height: 10vw;
+    max-height: 250px;
+    max-width: var(--img-maxWidth);
+}
+.cartItemPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cartItem button {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 400;
+    padding: .4rem;
+    background-color: #FFD814;
+    border: 2px solid #FCD200;    
+    box-shadow: 0 2px 8px rgb(180 180 180 / 57%);
+    margin-bottom: 10px;
+    border-radius: .2rem;
+}
+.cartItem button:hover {
+    cursor: pointer;
+    background-color: #f3cc09;
+}
+.imgContainer{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+.cartItemTitle {
+    font-size: 1.5rem;
+    flex-grow: 1;
+    padding-left: 5rem;
+}

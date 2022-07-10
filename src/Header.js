@@ -9,9 +9,9 @@ function leftNav () {
     return (
         <div className = 'navLeft'>
         <Link to = '/'>
-            <div className= 'headerHomeButton'>  <img width = '100px'src = {AmazonLogo} /> </div>
+            <div className= 'headerHomeButton'>  <img alt= "Amazon logo"width = '100px'src = {AmazonLogo} /> </div>
         </Link>
-     <div className = 'headerLocationButton'> <img width = '18px' height = '18px' src= {locationImg} /> <div> <div> <h1>Hello</h1> </div>
+     <div className = 'headerLocationButton'> <img alt= "location icon" width = '18px' height = '18px' src= {locationImg} /> <div> <div> <h1>Hello</h1> </div>
      <h2>Select your address</h2> </div>
      </div>
      </div>
@@ -29,7 +29,7 @@ function searchBar () {
 }
 
 function rightNav () {
-    const [{basket},dispatch] = useStateValue();
+    const [{basket}] = useStateValue();
     return (
 <div className = 'navRight'>
 <div className = 'headerButton'>  <div> <div> <h1>Hello, sign in</h1> </div>
@@ -43,7 +43,7 @@ function rightNav () {
         <div className = 'headerButton cartButton'>
             <div className = 'cartWrapper'>
             <span className= 'cartCount'>{basket.length}</span>
-                <img height = '30px' src= {cart} />
+                <img alt = "cart icon"height = '30px' src= {cart} />
             </div>
                 <h2>Cart</h2>
         </div>

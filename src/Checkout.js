@@ -2,18 +2,27 @@ import React from 'react'
 import StoreCard from './images/store-card.jpg';
 import './Checkout.css';
 import Subtotal from './Subtotal';
+import { useStateValue } from './StateProvider';
+import CartItem from './CartItem';
 function Checkout() {
+  const [{basket}] = useStateValue();
   return (
     <div className= 'checkout'>
 		<div className= 'checkoutLeft'>
-            <div className='ad'><img src={StoreCard}></img><p>Pay <span className='redAdText'>$46.50/month for 6 months</span> <strong>0% interest</strong> <small>(plus S&amp;H and text)</small> when you choose equal monthly payments at checkout</p></div>
+            <div className='ad'><img alt="Store card ad" src={StoreCard}></img><p>Pay <span className='redAdText'>$46.50/month for 6 months</span> <strong>0% interest</strong> <small>(plus S&amp;H and text)</small> when you choose equal monthly payments at checkout</p></div>
             <div className='shoppingCart'>
-                <div class="headerTitle">
+                <div className="headerTitle">
                   <h1>Shopping Cart</h1>
                   <div>Price</div>
                 </div>
-                <div className='cartItems'>
-                </div>
+                {basket.map(basketItem => (
+                  <CartItem
+                  id = {basketItem.id}
+                  title = {basketItem.title}
+                  price = {basketItem.price}
+                  image = {basketItem.image}
+                  />
+                ))}
                 <Subtotal/>
             </div>
         </div>
