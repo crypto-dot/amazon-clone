@@ -200,13 +200,14 @@
     align-items: center;
     justify-content: center;
     border:none;
-    background-color:#FF9900;
+    background-color:#FFD814;
+    border: 2px solid #FCD200;
 }
 .addToCart:hover {
     cursor: pointer;
 }
 .addToCart:hover, .addToCart:focus {
-    background-color: #e0921c;
+    background-color: #f3cc09;
 }
 .ratingAndCount {
     display: flex;

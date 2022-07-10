@@ -1,8 +1,20 @@
+@font-face {
+  font-family: 'AmazonThin';
+  src: url('./fonts/Ember/AmazonEmber_Lt.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'AmazonRegular';
+  src: url('./fonts/Ember/AmazonEmber_Rg.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'AmazonBold';
+  src: url('./fonts/Ember/AmazonEmber_Bd.ttf') format('ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "AmazonRegular", sans-serif;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
