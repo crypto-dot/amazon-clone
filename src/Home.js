@@ -15,12 +15,6 @@ import Next from './images/next.png';
 import Product from './Product';
 import './Home.css'
 
-(function showSlides () {
-    let slideIndex = 1;
-
-
-
-})();
 function imgCarousel () {
     return (
         <ol className = 'carousel_viewport'>
@@ -38,56 +32,64 @@ function Home() {
         {imgCarousel()}
         <div className='homeRowContainer'>
         <div id = 'homeRow1'>
-        <Product 
+        <Product
+                id = {0} 
                 title = 'M Series TV Mount'
                 image = {TVMount}
                 rating = {4}
                 ratingCount = {5312}
                 price = {69.99}/>              
         <Product 
+            id = {1}
             title = 'Google Nest Learning Thermostat'
             image = {Thermostat}
             rating = {5}
             ratingCount = {12110}
             price = {99.99}/>              
+        <Product
+            id = {2}  
+            title = 'Ninja BL610 Professional'
+            image = {Blender}
+            rating = {4.5}
+            ratingCount = {12302}
+            price = {199.99}/> 
         <Product 
-        title = 'Ninja BL610 Professional'
-        image = {Blender}
-        rating = {4.5}
-        ratingCount = {12302}
-        price = {199.99}/> 
-        <Product 
-        title = 'Apple Air Tag'
-        image = {AppleAirTag}
-        rating = {4.5}
-        ratingCount = {9422}
-        price = {29.99}/> 
+            id = {3}
+            title = 'Apple Air Tag'
+            image = {AppleAirTag}
+            rating = {4.5}
+            ratingCount = {9422}
+            price = {29.99}/> 
         </div>
         <div id = 'homeRow2'> 
-                <Product 
-        title = 'Instant Pot Duo 7-in-1 Electric Cooker'
-        image = {InstaPot}
-        rating = {3.5}
-        ratingCount = {3012}
-        price = {49.99}/> 
-                <Product 
-        title = 'HP Pavillon 5'
-        image = {HP}
-        rating = {4.5}
-        ratingCount = {12030}
-        price = {599.99}/> 
-                <Product 
-        title = 'BlastCase Black 3-Button 3D USB '
-        image = {ShittyMouse}
-        rating = {1.5}
-        ratingCount = {9921}
-        price = {5.99}/> 
-                <Product 
-        title = 'M Series TV Mount'
-        image = {TVMount}
-        rating = {5}
-        ratingCount = {2130}
-        price = {199.99}/> 
+            <Product 
+                id = {4}
+                title = 'Instant Pot Duo 7-in-1 Electric Cooker'
+                image = {InstaPot}
+                rating = {3.5}
+                ratingCount = {3012}
+                price = {49.99}/> 
+            <Product
+                id = {5} 
+                title = 'HP Pavillon 5'
+                image = {HP}
+                rating = {4.5}
+                ratingCount = {12030}
+                price = {599.99}/> 
+            <Product
+                id = {6} 
+                title = 'BlastCase Black 3-Button 3D USB '
+                image = {ShittyMouse}
+                rating = {1.5}
+                ratingCount = {9921}   
+                price = {5.99}/> 
+            <Product
+                id = {7} 
+                title = 'M Series TV Mount'
+                image = {TVMount}
+                rating = {5}
+                ratingCount = {2130}
+                price = {199.99}/> 
     </div>
     </div>
     </div>

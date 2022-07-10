@@ -53,8 +53,6 @@ header {
 }
 .headerHomeButton {
     margin-top: 5px;
-    display: flex;
-    align-items: center;
     margin-bottom: 7px;
     padding: 6px 10px 0px 5px;
 }
@@ -159,19 +157,27 @@ input[type='text'] {
     display: flex;
     align-items: flex-end;
 }
-.headerButton:last-child {
+a > .headerButton {
+   position: relative;
+}
+.navRight > a {
     align-items: flex-end;
     padding-bottom: 5px;
     height: 47px;
-    position: relative;
     padding-right: 20px;
+    text-decoration: none;
+}
+.cartWrapper {
+    position: relative;
 }
 .cartCount {
+    width: 50%;
+    text-align: center;
     font-family: 'AmazonBold', sans-serif;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1rem;
     position: absolute;
     color: #f08804;
-    left: 20px;
-    bottom: 20px;
+    left: 15px;
+    bottom: 23px;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import StoreCard from './images/store-card.jpg';
 import './Checkout.css';
-
+import Subtotal from './Subtotal';
 function Checkout() {
   return (
     <div className= 'checkout'>
@@ -14,12 +14,12 @@ function Checkout() {
                 </div>
                 <div className='cartItems'>
                 </div>
-                <div><div class="subtotal">Subtotal (0 item): <strong>$0</strong></div></div>
+                <Subtotal/>
             </div>
         </div>
         <div className='checkoutRight'>
             <div className = "proceedToCheckout">
-                <h1>No Items selected</h1>
+                <h1><Subtotal/></h1>
                 <div className='giftOption'><input type='checkbox'></input><p>This order contains a gift</p></div>
                 <button className='checkoutButton'>Proceed To Checkout</button>
             </div>

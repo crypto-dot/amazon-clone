@@ -201,6 +201,7 @@
     justify-content: center;
     border:none;
     background-color:#FFD814;
+    box-shadow: 0 4px 8px rgb(215 215 215);
     border: 2px solid #FCD200;
 }
 .addToCart:hover {
