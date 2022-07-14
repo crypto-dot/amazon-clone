@@ -10,6 +10,9 @@
     font-family: 'AmazonBold';
     src: url('./fonts/Ember/AmazonEmber_Bd.ttf') format('ttf');
 }
+.checkoutContainer {
+    min-width: 1000px;
+}
 .checkout {
     display: grid;
     grid-template-columns: 4fr 1fr;

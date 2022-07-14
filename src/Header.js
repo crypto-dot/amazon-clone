@@ -32,9 +32,11 @@ function rightNav () {
     const [{basket}] = useStateValue();
     return (
 <div className = 'navRight'>
+<Link to="/login">
 <div className = 'headerButton'>  <div> <div> <h1>Hello, sign in</h1> </div>
 <h2>Accounts &amp; lists <span className= 'caret'></span> </h2> </div>
 </div>
+</Link>
 <div className = 'headerButton'> <div> <div> <h1>Returns</h1> </div>
      <h2>&amp; Orders</h2> </div>
      </div>

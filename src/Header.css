@@ -17,9 +17,8 @@
 :root {
     --input-width: 45px;
 }
-body {
-    background-color: #eaeaed;
-    min-width: 1000px;
+#root {
+    background-color: #eaeaed;  
 }
 header {
     position: sticky;
@@ -96,7 +95,11 @@ header h2 {
     border-left: 4px solid transparent;
     border-top: 5px solid grey;
 }
-input[type='submit'] {
+header input {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 500;
+}
+header input[type='submit'] {
     position: absolute;
     right:0;
     border:none;
@@ -110,14 +113,14 @@ input[type='submit'] {
     background-repeat: no-repeat;
     background-position: center;
 }
-input[type='submit']:hover {
+header input[type='submit']:hover {
     cursor: pointer;
     background-color: #f3a846;
 }
-input[type='text']:enabled {
+header input[type='text']:focus {
     border: 3px solid #f3a846; 
 }
-input[type='text']:disabled {
+header input[type='text']:disabled {
     border: none;
 }
 form {
@@ -160,7 +163,7 @@ input[type='text'] {
 a > .headerButton {
    position: relative;
 }
-.navRight > a {
+.navRight a:nth-child(3){
     align-items: flex-end;
     padding-bottom: 5px;
     height: 47px;

@@ -1,22 +1,19 @@
 
 import './App.css';
-import Header from './Header';
 import Home from './Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Checkout from './Checkout';
-import React from 'react';
+import React, { Fragment } from 'react';
+import Login from './Login';
+import Header from './Header';
 function App() {
   return (
     // BEM
     <Router>
-      <Header/>
       <Routes>
-
-    <Route path='/checkout' element={<Checkout/>}></Route>
-
-    <Route path='/' element = {<Home/>}>
-      </Route>
-
+    <Route path='/login' element={<><Login/></>}> </Route>
+    <Route path='/checkout' element={<div className="checkoutContainer"><Header/><Checkout/></div>}></Route>
+    <Route path='/' element = {<div className="homeContainer"><Header/><Home/></div>}></Route>
      </Routes>
     </Router>
     );

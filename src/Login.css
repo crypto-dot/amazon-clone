@@ -1,0 +1,107 @@
+
+#login{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding-bottom: 1rem;
+    border-color: rgba(214, 214, 214, 0.76);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+#login img {
+    max-width: 110px;
+    margin-bottom: .8rem;
+    margin-top: .5rem;
+}
+#loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#loginFieldSet {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    border: 1px solid rgba(209, 208, 208, 0.76);
+    width: clamp(250px,21vw,380px);
+    border-radius: .3rem;
+    padding: 1.5rem;
+}
+#login form {
+    margin-bottom: 1.2rem;
+}
+#newUserText {
+    z-index: 1;
+    width: fit-content;
+    padding: 0 .3rem;
+    background-color: white;
+    color: rgb(155, 155, 155);
+    font-size: .7rem;
+}
+#divider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#divider:after {
+    top: .36rem;
+    position: absolute;
+    display: flex;
+    content: "";
+    width: 100%;
+    border: .5px solid rgb(207, 207, 207);
+}
+#loginFieldSet h1 { 
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    color:black;
+    margin-bottom: 1rem;
+}
+#loginFieldSet label,#loginFieldSet p, #loginFieldSet a {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 500;
+    font-size: .8rem;
+}
+#loginFieldSet input[type="submit"] {
+    height: 2rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border-color:#a88734 #9c7e31 #846a29;
+    border-width: 1px;
+    border-radius: .3rem;
+}
+
+#email, #password {
+    height: 2rem;
+    outline: none;
+    margin-bottom: 1rem;
+}
+#email:focus, #password:focus {
+    border: 1px solid rgb(204, 105, 12);
+    box-shadow: 0 0 5px rgb(233, 149, 70);
+}
+#lowerHalf {
+    width: 100%;
+}
+#createAccount {
+    font-family: 'AmazonRegular', sans-serif;
+    font-weight: 500;
+    background-image: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border-width: 1px;
+    border-radius: .3rem;
+    height: 2rem;
+    width: 100%;
+}
+footer {
+    position: absolute;
+    top: 100%;
+}
+#login footer p {
+    font-size: .75rem;
+    color: rgba(172, 172, 172, 0.76);
+}

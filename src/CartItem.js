@@ -5,6 +5,7 @@ import { useStateValue } from './StateProvider';
 function CartItem({id,image,title,price}) {
   const [{basket}, dispatch] = useStateValue();
   const removeFromBasket = () => {
+
     dispatch(
       {
         type: 'REMOVE_FROM_BASKET',

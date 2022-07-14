@@ -12,7 +12,8 @@ export const reducer = (state, action) => {
              const index = state.basket.findIndex(basketItem => (
                  basketItem.id === action.id
              ));
-
+             console.log(index);
+             console.log(action);
              if(index >= 0) {
                 state.basket.splice(index,1);
              } else {
@@ -20,8 +21,8 @@ export const reducer = (state, action) => {
              }
              return {
                  ...state,
-                 basket : state.basket
-             } 
+                 basket: state.basket
+             }
         default: 
             return state;
     }
