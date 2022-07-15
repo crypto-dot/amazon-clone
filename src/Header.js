@@ -5,6 +5,7 @@ import locationImg from './images/LogoLocation.png';
 import cart from './images/cart.png';
 import {Link} from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+
 function leftNav () {
     return (
         <div className = 'navLeft'>
@@ -29,11 +30,18 @@ function searchBar () {
 }
 
 function rightNav () {
-    const [{basket}] = useStateValue();
+    const [{basket},user] = useStateValue();
+
+    let headerUserText;
+    if(user) {
+        headerUserText = user;
+    } else {
+        headerUserText = 'Guest sign in';
+    }
     return (
 <div className = 'navRight'>
 <Link to="/login">
-<div className = 'headerButton'>  <div> <div> <h1>Hello, sign in</h1> </div>
+<div className = 'headerButton'>  <div> <div> <h1>Hello, {headerUserText}</h1> </div>
 <h2>Accounts &amp; lists <span className= 'caret'></span> </h2> </div>
 </div>
 </Link>
