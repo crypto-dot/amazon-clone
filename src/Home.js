@@ -13,6 +13,7 @@ import AppleAirTag from './images/appleAirTag.jpg';
 import Prev from './images/prev.png';
 import Next from './images/next.png';
 import Product from './Product';
+import BedFrame from './images/bedFrame.jpg';
 import './Home.css'
 
 function imgCarousel () {
@@ -93,10 +94,10 @@ function Home() {
             <Product
                 key = {312}
                 id = {7} 
-                title = 'M Series TV Mount'
-                image = {TVMount}
-                rating = {5}
-                ratingCount = {2130}
+                title = 'Bed Frame'
+                image = {BedFrame}
+                rating = {3.5}
+                ratingCount = {1230}
                 price = {199.99}/> 
     </div>
     </div>
