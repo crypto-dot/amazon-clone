@@ -47,7 +47,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.headerTitle > div {
+.headerTitle > h4 {
     align-self: flex-end;
 }
 .shoppingCart h1, .proceedToCheckout h1{

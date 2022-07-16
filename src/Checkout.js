@@ -4,6 +4,7 @@ import './Checkout.css';
 import Subtotal from './Subtotal';
 import { useStateValue } from './StateProvider';
 import CartItem from './CartItem';
+import FlipMove from 'react-flip-move';
 function Checkout() {
   const [{basket, user}] = useStateValue();
   const getHeaderText = () => {
@@ -20,15 +21,19 @@ function Checkout() {
                 <div className="headerTitle">
                   <h1>Hello {getHeaderText()}</h1>
                   <h1>Your Shopping Cart</h1>
-                  <div>Price</div>
+                  <h4> <select> <option>Ascending</option>  <option>Descending</option></select> <span>Price </span></h4>
                 </div>
                 {basket.map(basketItem => (
+                  <FlipMove>
                   <CartItem
+                  key = {new Date().getTime()}
+                  keyID = {basketItem.keyID}
                   id = {basketItem.id}
                   title = {basketItem.title}
                   price = {basketItem.price}
                   image = {basketItem.image}
                   />
+                  </FlipMove>
                 ))}
                 <Subtotal/>
             </div>

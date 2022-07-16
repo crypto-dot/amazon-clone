@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './CartItem.css';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider';
-function CartItem({id,image,title,price}) {
-  const [{basket}, dispatch] = useStateValue();
+const CartItem = forwardRef( ({keyID, id,image,title,price}, ref) => {
+  const [{}, dispatch] = useStateValue();
   const removeFromBasket = () => {
-
     dispatch(
       {
         type: 'REMOVE_FROM_BASKET',
-        id: id
+        keyID: keyID
       }
     )
   };
+
   return (
-    <div className = 'cartItem'>
+    
+    <div ref={ref} className = 'cartItem'>
       <div className='imgContainer'><img alt = {title}src = {image}></img></div>
       <h1 className='cartItemTitle'>{title}</h1>
       <CurrencyFormat renderText = { (value) => (
@@ -30,5 +31,6 @@ function CartItem({id,image,title,price}) {
     </div>
   );
 }
+)
 
 export default CartItem
