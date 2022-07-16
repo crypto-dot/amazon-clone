@@ -2,14 +2,13 @@ import React from 'react'
 import Star from './images/star.png';
 import HalfStar from './images/halfStar2.png';
 import { useStateValue } from './StateProvider';
-function Product({ id, title, image, rating, ratingCount, price}) {
+function Product({keyID, key, id, title, image, rating, ratingCount, price}) {
     let halfStar = '';
     if(rating - Math.floor(rating) !== 0) {
         halfStar = <img alt="star rating icon" width = '20px' src={HalfStar}/>
         rating = Math.floor(rating);
     }
-
-      const [{basket}, dispatch] = useStateValue();
+      const [{}, dispatch] = useStateValue();
       const addToBasket = () => {
           dispatch({
             type: 'ADD_TO_BASKET',

@@ -5,14 +5,23 @@ import Subtotal from './Subtotal';
 import { useStateValue } from './StateProvider';
 import CartItem from './CartItem';
 import FlipMove from 'react-flip-move';
+
 function Checkout() {
-  const [{basket, user}] = useStateValue();
+  const [{basket, user}, dispatch] = useStateValue();
   const getHeaderText = () => {
     if(user) {
       return `${user.email},`;
     } 
     return 'Guest,'; 
   }
+  let basketSorted = basket.sort(sortAsc);
+  function sortAsc(basketItemA, basketItemB) {
+      if(basketItemA.price < basketItemB.price) {
+        return 1;
+      } else if (basketItemA.price > basketItemB.price) {
+        return -1;
+      } return 0;
+  };
   return (
     <div className= 'checkout'>
 		<div className= 'checkoutLeft'>
@@ -21,9 +30,10 @@ function Checkout() {
                 <div className="headerTitle">
                   <h1>Hello {getHeaderText()}</h1>
                   <h1>Your Shopping Cart</h1>
-                  <h4> <select> <option>Ascending</option>  <option>Descending</option></select> <span>Price </span></h4>
+                  <h4> <span>Price </span></h4>
                 </div>
-                {basket.map(basketItem => (
+                <div id="items">
+                {basketSorted.map(basketItem => (
                   <FlipMove>
                   <CartItem
                   key = {new Date().getTime()}
@@ -35,6 +45,7 @@ function Checkout() {
                   />
                   </FlipMove>
                 ))}
+                </div>
                 <Subtotal/>
             </div>
         </div>
