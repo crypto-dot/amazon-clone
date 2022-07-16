@@ -11,14 +11,12 @@ export const reducer = (state, action) => {
             }
         case 'REMOVE_FROM_BASKET':
              const index = state.basket.findIndex(basketItem => (
-                 basketItem.id === action.id
+                 basketItem.keyID === action.keyID
              ));
-             console.log(index);
-             console.log(action);
              if(index >= 0) {
                 state.basket.splice(index,1);
              } else {
-                 console.warn(`Unable to remove item with ${action.id} id.`);
+                 console.warn(`Unable to remove item with ${action.keyID} id.`);
              }
              return {
                  ...state,

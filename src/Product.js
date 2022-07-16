@@ -2,7 +2,7 @@ import React from 'react'
 import Star from './images/star.png';
 import HalfStar from './images/halfStar2.png';
 import { useStateValue } from './StateProvider';
-function Product({id, title, image, rating, ratingCount, price}) {
+function Product({key, id, title, image, rating, ratingCount, price}) {
     let halfStar = '';
     if(rating - Math.floor(rating) !== 0) {
         halfStar = <img alt="star rating icon" width = '20px' src={HalfStar}/>
@@ -14,6 +14,7 @@ function Product({id, title, image, rating, ratingCount, price}) {
           dispatch({
             type: 'ADD_TO_BASKET',
             item: {
+                keyID: new Date().getTime(),
                 id: id,
                 title: title,
                 image: image,

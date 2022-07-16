@@ -33,6 +33,7 @@ function Home() {
         <div className='homeRowContainer'>
         <div id = 'homeRow1'>
         <Product
+                keyID = {null}
                 key = {123}
                 id = {0} 
                 title = 'M Series TV Mount'
@@ -41,6 +42,7 @@ function Home() {
                 ratingCount = {5312}
                 price = {69.99}/>              
         <Product 
+            keyID = {null}
             key = {212}
             id = {1}
             title = 'Google Nest Learning Thermostat'
@@ -49,6 +51,7 @@ function Home() {
             ratingCount = {12110}
             price = {99.99}/>              
         <Product
+            keyID = {null}
             key = {125}
             id = {2}  
             title = 'Ninja BL610 Professional'
@@ -57,6 +60,7 @@ function Home() {
             ratingCount = {12302}
             price = {199.99}/> 
         <Product 
+            keyID = {null}
             key= {109}
             id = {3}
             title = 'Apple Air Tag'
@@ -67,6 +71,7 @@ function Home() {
         </div>
         <div id = 'homeRow2'> 
             <Product 
+                keyID = {null}
                 key = {993}
                 id = {4}
                 title = 'Instant Pot Duo 7-in-1 Electric Cooker'
@@ -75,6 +80,7 @@ function Home() {
                 ratingCount = {3012}
                 price = {49.99}/> 
             <Product
+                keyID = {new Date().getTime()}
                 key = {221}
                 id = {5} 
                 title = 'HP Pavillon 5'
@@ -83,6 +89,7 @@ function Home() {
                 ratingCount = {12030}
                 price = {599.99}/> 
             <Product
+                keyID = {null}
                 key = {101}
                 id = {6} 
                 title = 'BlastCase Black 3-Button 3D USB '
@@ -91,6 +98,7 @@ function Home() {
                 ratingCount = {9921}   
                 price = {5.99}/> 
             <Product
+                keyID = {null}
                 key = {312}
                 id = {7} 
                 title = 'M Series TV Mount'
