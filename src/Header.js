@@ -5,6 +5,7 @@ import locationImg from './images/LogoLocation.png';
 import cart from './images/cart.png';
 import {Link} from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 function leftNav () {
     return (
@@ -30,20 +31,29 @@ function searchBar () {
 }
 
 function rightNav () {
-    const [{basket},user] = useStateValue();
+    const [{basket, user}] = useStateValue();
 
-    let headerUserText;
-    if(user) {
-        headerUserText = user;
-    } else {
-        headerUserText = 'Guest sign in';
+    const headerUserText = () => {
+        if(user) {
+            return (
+                <div onClick= {userAuthentication} className = 'headerButtonAdjusted'>  <div> <div> <h1>Hello, {user.email}</h1> </div>
+                <h2>Sign Out</h2> </div> </div>
+            );
+        }
+            return  (<div onClick= {userAuthentication} className = 'headerButton'>  <div> <div> <h1>Hello, Guest</h1> </div>
+            <h2>Accounts &amp; lists <span className= 'caret'></span> </h2> </div> </div>);
+    };
+
+    const userAuthentication = () => {
+        if(user) {
+            auth.signOut();
+        }
     }
+
     return (
 <div className = 'navRight'>
-<Link to="/login">
-<div className = 'headerButton'>  <div> <div> <h1>Hello, {headerUserText}</h1> </div>
-<h2>Accounts &amp; lists <span className= 'caret'></span> </h2> </div>
-</div>
+<Link to={!user && "/login"}>
+    {headerUserText()}
 </Link>
 <div className = 'headerButton'> <div> <div> <h1>Returns</h1> </div>
      <h2>&amp; Orders</h2> </div>
