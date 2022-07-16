@@ -8,9 +8,9 @@ function Checkout() {
   const [{basket, user}] = useStateValue();
   const getHeaderText = () => {
     if(user) {
-      return `${user.email} `;
+      return `${user.email},`;
     } 
-    return 'Guest '; 
+    return 'Guest,'; 
   }
   return (
     <div className= 'checkout'>
@@ -18,7 +18,7 @@ function Checkout() {
             <div className='ad'><img alt="Store card ad" src={StoreCard}></img><p>Pay <span className='redAdText'>$46.50/month for 6 months</span> <strong>0% interest</strong> <small>(plus S&amp;H and text)</small> when you choose equal monthly payments at checkout</p></div>
             <div className='shoppingCart'>
                 <div className="headerTitle">
-                  <h1>Hello {getHeaderText()},</h1>
+                  <h1>Hello {getHeaderText()}</h1>
                   <h1>Your Shopping Cart</h1>
                   <div>Price</div>
                 </div>

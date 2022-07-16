@@ -40,7 +40,7 @@ function rightNav () {
                 <h2>Sign Out</h2> </div> </div>
             );
         }
-            return  (<div onClick= {userAuthentication} className = 'headerButton'>  <div> <div> <h1>Hello, Guest</h1> </div>
+            return  (<div onClick= {userAuthentication} className = 'headerButton'>  <div> <div> <h1>Hello, Guest Sign in</h1> </div>
             <h2>Accounts &amp; lists <span className= 'caret'></span> </h2> </div> </div>);
     };
 

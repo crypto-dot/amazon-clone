@@ -184,3 +184,6 @@ a > .headerButton {
     left: 15px;
     bottom: 23px;
 }
+a {
+    text-decoration: none;
+}
