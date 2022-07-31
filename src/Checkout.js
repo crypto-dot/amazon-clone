@@ -5,8 +5,10 @@ import Subtotal from './Subtotal';
 import { useStateValue } from './StateProvider';
 import CartItem from './CartItem';
 import FlipMove from 'react-flip-move';
+import {useNavigate} from 'react-router-dom';
 
 function Checkout() {
+  const navigate = useNavigate();
   const [{basket, user}, dispatch] = useStateValue();
   const getHeaderText = () => {
     if(user) {
@@ -53,7 +55,7 @@ function Checkout() {
             <div className = "proceedToCheckout">
                 <h1><Subtotal/></h1>
                 <div className='giftOption'><input type='checkbox'></input><p>This order contains a gift</p></div>
-                <button className='checkoutButton'>Proceed To Checkout</button>
+                <button onClick={e=> navigate('/payment')} className='checkoutButton'>Proceed To Checkout</button>
             </div>
         </div>
     </div>
