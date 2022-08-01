@@ -16,93 +16,93 @@ import Product from './Product';
 import BedFrame from './images/bedFrame.jpg';
 import './Home.css'
 
-function imgCarousel () {
+function imgCarousel() {
     return (
-        <ol className = 'carousel_viewport'>
-            <li className="carousel_slide" id="carousel_slide1" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Prime day deals" src = {PictureSlide1}/> <a href="#carousel_slide4" className="prev"><img src= {Prev} alt="" /></a> <a href="#carousel_slide2" className="next"><img src={Next} alt="" /></a> </li>
-            <li className="carousel_slide" id="carousel_slide2" tabIndex="0"><div className='carousel_snapper'> </div><img alt = "Fire stick ad"src = {PictureSlide2}/> <a href="#carousel_slide1" className="prev"><img src={Prev} alt="" /> </a><a href="#carousel_slide3" className="next"><img src={Next} alt="" /></a>  </li>
-            <li className="carousel_slide" id="carousel_slide3" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Amazon prime day ad" src = {PictureSlide3}/> <a href="#carousel_slide2" className="prev"><img src={Prev} alt="" /> </a> <a href="#carousel_slide4" className="next"><img src={Next} alt="" /></a> </li>
-            <li className="carousel_slide" id="carousel_slide4" tabIndex="0"><div className='carousel_snapper'> </div><img alt="The boys TV series ad" src = {PictureSlide4}/> <a href="#carousel_slide3" className="prev"><img src={Prev} alt="" /></a> <a href="#carousel_slide1" className="next"><img src={Next} alt="" /></a> </li>
+        <ol className='carousel_viewport'>
+            <li className="carousel_slide" id="carousel_slide1" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Prime day deals" src={PictureSlide1} /> <a href="#carousel_slide4" className="prev"><img src={Prev} alt="" /></a> <a href="#carousel_slide2" className="next"><img src={Next} alt="" /></a> </li>
+            <li className="carousel_slide" id="carousel_slide2" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Fire stick ad" src={PictureSlide2} /> <a href="#carousel_slide1" className="prev"><img src={Prev} alt="" /> </a><a href="#carousel_slide3" className="next"><img src={Next} alt="" /></a>  </li>
+            <li className="carousel_slide" id="carousel_slide3" tabIndex="0"><div className='carousel_snapper'> </div><img alt="Amazon prime day ad" src={PictureSlide3} /> <a href="#carousel_slide2" className="prev"><img src={Prev} alt="" /> </a> <a href="#carousel_slide4" className="next"><img src={Next} alt="" /></a> </li>
+            <li className="carousel_slide" id="carousel_slide4" tabIndex="0"><div className='carousel_snapper'> </div><img alt="The boys TV series ad" src={PictureSlide4} /> <a href="#carousel_slide3" className="prev"><img src={Prev} alt="" /></a> <a href="#carousel_slide1" className="next"><img src={Next} alt="" /></a> </li>
         </ol>
     )
 }
 
 function Home() {
-  return (
-    <div className='homePage'>
-        {imgCarousel()}
-        <div className='homeRowContainer'>
-        <div id = 'homeRow1'>
-        <Product
-                key = {123}
-                id = {0} 
-                title = 'M Series TV Mount'
-                image = {TVMount}
-                rating = {4}
-                ratingCount = {5312}
-                price = {69.99}/>              
-        <Product 
-            key = {212}
-            id = {1}
-            title = 'Google Nest Learning Thermostat'
-            image = {Thermostat}
-            rating = {5}
-            ratingCount = {12110}
-            price = {99.99}/>              
-        <Product
-            key = {125}
-            id = {2}  
-            title = 'Ninja BL610 Professional'
-            image = {Blender}
-            rating = {4.5}
-            ratingCount = {12302}
-            price = {199.99}/> 
-        <Product 
-            key= {109}
-            id = {3}
-            title = 'Apple Air Tag'
-            image = {AppleAirTag}
-            rating = {4.5}
-            ratingCount = {9422}
-            price = {29.99}/> 
+    return (
+        <div className='homePage'>
+            {imgCarousel()}
+            <div className='homeRowContainer'>
+                <div id='homeRow1'>
+                    <Product
+                        key={123}
+                        id={0}
+                        title='M Series TV Mount'
+                        image={TVMount}
+                        rating={4}
+                        ratingCount={5312}
+                        price={69.99} />
+                    <Product
+                        key={212}
+                        id={1}
+                        title='Google Nest Learning Thermostat'
+                        image={Thermostat}
+                        rating={5}
+                        ratingCount={12110}
+                        price={99.99} />
+                    <Product
+                        key={125}
+                        id={2}
+                        title='Ninja BL610 Professional'
+                        image={Blender}
+                        rating={4.5}
+                        ratingCount={12302}
+                        price={199.99} />
+                    <Product
+                        key={109}
+                        id={3}
+                        title='Apple Air Tag'
+                        image={AppleAirTag}
+                        rating={4.5}
+                        ratingCount={9422}
+                        price={29.99} />
+                </div>
+                <div id='homeRow2'>
+                    <Product
+                        key={993}
+                        id={4}
+                        title='Instant Pot Duo 7-in-1 Electric Cooker'
+                        image={InstaPot}
+                        rating={3.5}
+                        ratingCount={3012}
+                        price={49.99} />
+                    <Product
+                        key={221}
+                        id={5}
+                        title='HP Pavillon 5'
+                        image={HP}
+                        rating={4.5}
+                        ratingCount={12030}
+                        price={599.99} />
+                    <Product
+                        key={101}
+                        id={6}
+                        title='BlastCase Black 3-Button 3D USB '
+                        image={ShittyMouse}
+                        rating={1.5}
+                        ratingCount={9921}
+                        price={5.99} />
+                    <Product
+                        key={312}
+                        id={7}
+                        title='Bed Frame'
+                        image={BedFrame}
+                        rating={3.5}
+                        ratingCount={1230}
+                        price={199.99} />
+                </div>
+            </div>
         </div>
-        <div id = 'homeRow2'> 
-            <Product 
-                key = {993}
-                id = {4}
-                title = 'Instant Pot Duo 7-in-1 Electric Cooker'
-                image = {InstaPot}
-                rating = {3.5}
-                ratingCount = {3012}
-                price = {49.99}/> 
-            <Product
-                key = {221}
-                id = {5} 
-                title = 'HP Pavillon 5'
-                image = {HP}
-                rating = {4.5}
-                ratingCount = {12030}
-                price = {599.99}/> 
-            <Product
-                key = {101}
-                id = {6} 
-                title = 'BlastCase Black 3-Button 3D USB '
-                image = {ShittyMouse}
-                rating = {1.5}
-                ratingCount = {9921}   
-                price = {5.99}/> 
-            <Product
-                key = {312}
-                id = {7} 
-                title = 'Bed Frame'
-                image = {BedFrame}
-                rating = {3.5}
-                ratingCount = {1230}
-                price = {199.99}/> 
-    </div>
-    </div>
-    </div>
-  )
+    )
 }
 
 export default Home

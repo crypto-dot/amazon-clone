@@ -55,13 +55,16 @@ header {
     margin-bottom: 7px;
     padding: 6px 10px 0px 5px;
 }
-.headerLocationButton, .headerHomeButton, .headerButton{
+.headerLocationButton, .headerHomeButton, .headerButton,.headerButtonAdjusted{
     border: 1px solid #131921;
     border-radius: 2px;
 }
-.headerLocationButton:hover, .headerHomeButton:hover, .headerButton:hover {
+.headerLocationButton:hover, .headerHomeButton:hover, .headerButton:hover,.headerButtonAdjusted:hover {
     cursor: pointer;
     border: 1px solid white;
+}
+.headerButtonAdjusted {
+    padding: 6px 10px 5px 5px;
 }
 .headerButton {
     display: flex;
@@ -163,6 +166,7 @@ input[type='text'] {
 a > .headerButton {
    position: relative;
 }
+
 .navRight a:nth-child(3){
     align-items: flex-end;
     padding-bottom: 5px;
