@@ -7,6 +7,9 @@
 .cartItem:not(:last-child) {
     border-bottom: 2px solid rgba(224, 224, 224, 0.568);
 }
+#items > div:not(:last-child) {
+    border-bottom: 2px solid rgba(224, 224, 224, 0.568);
+}
 .cartItem img {
     width: initial;
     height: 10vw;

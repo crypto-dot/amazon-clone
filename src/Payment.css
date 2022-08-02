@@ -193,3 +193,11 @@
     border: 2px solid rgba(182, 180, 180, 0.5);
     height: 1.5rem;
 }
+.paymentMethod form {
+    width: 120%;
+}
+.errorHandling {
+    text-align: center;
+    color:rgb(116, 3, 3);
+    font-size: 2rem;
+}

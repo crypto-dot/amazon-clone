@@ -98,6 +98,6 @@
 .giftOption p {
     font-size: .85rem;
 }
-.subtotal {   
+.checkoutLeft .subtotal {   
     border-top: 2px solid rgba(224, 224, 224, 0.568);
  }

@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PlaceOrder from './images/PaymentPlaceOrder.gif';
 import { useStateValue } from './StateProvider';
 import CartItem from './CartItem';
 import FlipMove from 'react-flip-move';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { useNavigate } from 'react-router';
+import axios from './axios';
 import './Payment.css';
 function Payment() {
     const [{ basket, user }] = useStateValue();
+
+    const navigate = useNavigate();
+
+    const stripe = useStripe();
+    const elements = useElements();
+
+    const [error, setError] = useState(null);
+    const [disabled, setDisabled] = useState(true);
+    const [succeeded, setSucceeded] = useState(false);
+    const [processing, setProcessing] = useState("");
+    const [clientSecret, setClientSecret] = useState(true);
+
+    useEffect(() => {
+        (async () => {
+            const response = await axios(
+                {
+                    method: "POST",
+                    url: `/payments/create?total=${getBasketTotal() * 100}`
+                });
+            setClientSecret(response.data.clientSecret);
+        })();
+    }, [basket]);
+
+    console.log("The SECRET IS >>>", clientSecret);
     function getHeader() {
         if (user) {
             return (
@@ -22,27 +49,6 @@ function Payment() {
             console.log(e.key);
             e.preventDefault();
         }
-    }
-    function creditCardInputFormatter(e) {
-        if ((new RegExp('[0-9]').test(e.key))) {
-            if (e.target.value.match(new RegExp(/[0-9]+/g)) == null) {
-                return;
-            }
-            let CCNumber = e.target.value.match(new RegExp(/[0-9]+/g)).join('');
-            if (CCNumber.length > 16) {
-                CCNumber = CCNumber.slice(0, 16);
-            }
-            if (CCNumber.length >= 12) {
-                CCNumber = CCNumber.slice(0, 4) + ' ' + CCNumber.slice(4, 8) + ' ' + CCNumber.slice(8, 12) + ' ' + CCNumber.slice(12);
-            } else if (CCNumber.length >= 8) {
-                CCNumber = CCNumber.slice(0, 4) + ' ' + CCNumber.slice(4, 8) + ' ' + CCNumber.slice(8);
-
-            } else if (CCNumber.length >= 4) {
-                CCNumber = CCNumber.slice(0, 4) + ' ' + CCNumber.slice(4);
-            }
-            e.target.value = CCNumber;
-        }
-
     }
     function phoneNumberInputFormatter(e) {
         if ((new RegExp('[0-9]').test(e.key))) {
@@ -63,20 +69,27 @@ function Payment() {
             e.target.value = phoneNumber;
         }
     }
-    function expiryFormatter(e) {
-        if ((new RegExp('[0-9]').test(e.key))) {
-            if (e.target.value.match(new RegExp(/[0-9]+/g)) == null) {
-                return;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setProcessing(true);
+
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement)
             }
-            let expiryDate = e.target.value.match(new RegExp(/[0-9]+/g)).join('');
-            if (expiryDate.length > 4) {
-                expiryDate = expiryDate.slice(0, 4);
-            }
-            if (expiryDate.length >= 2) {
-                expiryDate = expiryDate.slice(0, 2) + " / " + expiryDate.slice(2);
-            }
-            e.target.value = expiryDate
-        }
+        }).then(({ paymentIntent }) => {
+            setSucceeded(true);
+            setError(null);
+            setProcessing(false);
+            navigate('/orders', { replace: true });
+        })
+    }
+    const handleChange = e => {
+        setDisabled(e.empty);
+        setError(e.error ? e.error.message : '');
+    }
+    const getBasketTotal = () => {
+        return (new Number(basketReducer() * .0625) + new Number(basketReducer()) + new Number(basket.length * 1.25)).toFixed(2);
     }
     let basketSorted = basket.sort(sortAsc);
     function sortAsc(basketItemA, basketItemB) {
@@ -96,6 +109,7 @@ function Payment() {
         <div id="pageContainer">
             <img src={PlaceOrder} />
             <h1 id="paymentTitle">Review Your Order</h1>
+            {error && <div className="errorHandling">{error}</div>}
             <div className="orderContainer">
                 <div className="orderLeft">
                     <div className='billingInfo'>
@@ -112,18 +126,9 @@ function Payment() {
                         <div className="paymentMethod">
                             <div>
                                 <h2>Payment method</h2>
-                                <label className="paymentInputLabel" htmlFor='ccn'>Credit Card</label>
-                                <input onKeyDown={validInput} onKeyUp={creditCardInputFormatter} id='ccn' autoComplete="cc-number" maxLength="19" minLength="13" placeholder="xxxx xxxx xxxx xxxx" />
-                                <div id="ccvMonth">
-                                    <div>
-                                        <label htmlFor="ccv">CCV</label>
-                                        <input onKeyDown={validInput} size="5" id="ccv" type="text" maxLength="5" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="expiry">Expiry date</label>
-                                        <input placeholder="MM / YY" onKeyDown={validInput} onKeyUp={expiryFormatter} size="5" id="expiry" type="text" maxLength="7" />
-                                    </div>
-                                </div>
+                                <form id="paymentForm" onSubmit={handleSubmit}>
+                                    <CardElement onChange={handleChange} />
+                                </form>
                             </div>
                             <div id="billingAddress">
                                 <h2>Billing address <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>Change</a></h2>
@@ -137,7 +142,7 @@ function Payment() {
 
                 </div>
                 <div className="orderRight">
-                    <button>Place your order</button>
+                    <button disabled={processing || disabled || succeeded} form="paymentForm" type="submit"> {processing ? "Processing" : "Place your order"}</button>
                     <p>By placing your order you agree to Amazon's privacy notice and conditions of uses</p>
                     <h4>Order summary</h4>
                     <div className='orderSummary'>
@@ -161,7 +166,7 @@ function Payment() {
                     </FlipMove>
                 )}</div>
             </div>
-        </div>
+        </div >
 
     )
 }
