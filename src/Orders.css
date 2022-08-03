@@ -1,0 +1,10 @@
+
+.orders h1 {
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    color:black;
+}
+.orders .cartItem {
+    border: none;
+}
