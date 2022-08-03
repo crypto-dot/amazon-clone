@@ -1,3 +1,17 @@
+# PREVIEW -> https://clone-e1507.web.app
+
+## How To Get Started and Initiate a Fake Charge?
+
+Add items to your cart and proceed to checkout once you are at the checkout page use 4242 4242 4242 4242 as your credit card number. You can use any valid expiration date and any random string of numbers for your zipcode.
+
+## How to vieww orders?
+
+You must sign in to view orders.
+
+## How to Sign in/Register?
+
+In order to register enter random info for an email and password, you should be automatically signed in after clicking the Create an account button. Afterwards you can sign in using these credentials.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
