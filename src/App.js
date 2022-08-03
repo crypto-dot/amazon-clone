@@ -7,6 +7,7 @@ import React, { useEffect } from 'react';
 import Login from './Login';
 import Header from './Header';
 import Payment from './Payment';
+import Orders from './Orders';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
 import { loadStripe } from '@stripe/stripe-js';
@@ -43,6 +44,8 @@ function App() {
         <Route path='/login' element={<><Login /></>}> </Route>
         <Route path='/checkout' element={<div className="checkoutContainer"><Header /><Checkout /></div>}></Route>
         <Route path='/' element={<div className="homeContainer"><Header /><Home /></div>}></Route>
+        <Route path='/orders' element={<Orders />}>
+        </Route>
         <Route path='/payment' element={<div className="paymentContainer"><Elements stripe={promise} > <Payment /> </Elements></div>}></Route>
       </Routes>
     </Router>

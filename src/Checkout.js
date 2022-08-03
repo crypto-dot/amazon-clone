@@ -55,7 +55,7 @@ function Checkout() {
         <div className="proceedToCheckout">
           <h1><Subtotal /></h1>
           <div className='giftOption'><input type='checkbox'></input><p>This order contains a gift</p></div>
-          <button onClick={e => basket.length === 0 ? alert("You have no items in your cart to checkout") : navigate('/payment')} className='checkoutButton'>Proceed To Checkout</button>
+          <button onClick={e => navigate('/payment')} className='checkoutButton' disabled={basket.length === 0 || false}>Proceed To Checkout</button>
         </div>
       </div>
     </div>

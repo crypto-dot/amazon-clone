@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useNavigate } from 'react-router';
 import axios from './axios';
 import './Payment.css';
+import { db } from './firebase';
 function Payment() {
     const [{ basket, user }] = useStateValue();
 
@@ -15,6 +16,7 @@ function Payment() {
     const stripe = useStripe();
     const elements = useElements();
 
+    const [orders, setOrders] = useState([]);
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(true);
     const [succeeded, setSucceeded] = useState(false);
@@ -32,7 +34,6 @@ function Payment() {
         })();
     }, [basket]);
 
-    console.log("The SECRET IS >>>", clientSecret);
     function getHeader() {
         if (user) {
             return (
@@ -78,6 +79,17 @@ function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
+            db.collection('users')
+                .doc(user.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set(
+                    {
+                        basket: basket,
+                        amount: paymentIntent.amount,
+                        created: paymentIntent.created
+                    }
+                );
             setSucceeded(true);
             setError(null);
             setProcessing(false);
@@ -101,9 +113,6 @@ function Payment() {
     };
     function basketReducer() {
         return basket.reduce((prevVal, basketObj) => prevVal + basketObj.price, 0);
-    }
-    function taxAmount() {
-        return new Number((basketReducer() * .0625).toFixed(2));
     }
     return (
         <div id="pageContainer">
@@ -142,7 +151,7 @@ function Payment() {
 
                 </div>
                 <div className="orderRight">
-                    <button disabled={processing || disabled || succeeded} form="paymentForm" type="submit"> {processing ? "Processing" : "Place your order"}</button>
+                    <button disabled={processing || disabled || succeeded || basket.length === 0} form="paymentForm" type="submit"> {processing ? "Processing" : "Place your order"}</button>
                     <p>By placing your order you agree to Amazon's privacy notice and conditions of uses</p>
                     <h4>Order summary</h4>
                     <div className='orderSummary'>
