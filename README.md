@@ -4,13 +4,13 @@
 
 Add items to your cart and proceed to checkout once you are at the checkout page use 4242 4242 4242 4242 as your credit card number. You can use any valid expiration date and any random string of numbers for your zipcode.
 
-## How to vieww orders?
+## How to view orders?
 
 You must sign in to view orders.
 
 ## How to Sign in/Register?
 
-In order to register enter random info for an email and password, you should be automatically signed in after clicking the Create an account button. Afterwards you can sign in using these credentials.
+In order to register enter random info for an email and password. Creating an account is as simple as putting random information into the login page and then clicking the Create an Account Button.Afterwards you can sign in using these credentials.
 
 # Getting Started with Create React App
 
