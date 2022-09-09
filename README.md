@@ -6,9 +6,14 @@ Add items to your cart and proceed to checkout once you are at the checkout page
 
 ## How to view orders?
 
+<img width="1438" alt="Screen Shot 2022-09-09 at 11 26 13 AM" src="https://user-images.githubusercontent.com/78282234/189397548-cf0f72af-e688-4fdc-8291-5825d4401053.png">
+
 You must sign in to view orders.
 
 ## How to Sign in/Register?
+
+<img width="1440" alt="Screen Shot 2022-09-09 at 11 27 12 AM" src="https://user-images.githubusercontent.com/78282234/189397628-afbe993d-84da-47af-ad44-f5127a54080f.png">
+
 
 In order to register enter random info for an email and password. Creating an account is as simple as putting random information into the login page and then clicking the Create an Account Button.Afterwards you can sign in using these credentials.
 
